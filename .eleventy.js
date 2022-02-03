@@ -75,7 +75,7 @@ module.exports = function (eleventyConfig) {
   });
 
   // Don't process folders with static assets e.g. images
-  eleventyConfig.addPassthroughCopy({ 'favicon_io/*': '/' });
+  eleventyConfig.addPassthroughCopy({ 'static/favicon/*': '/' }); // This copies the contents of favicon folder to root
   eleventyConfig.addPassthroughCopy('static/img');
   eleventyConfig.addPassthroughCopy('admin');
   eleventyConfig.addPassthroughCopy('_includes/assets/css/inline.css');
