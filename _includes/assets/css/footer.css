@@ -27,3 +27,18 @@
   padding: 0px;
   fill: #000;
 }
+
+.copyright {
+  display: block;
+  margin: 0 0 50px 0;
+  text-align: center;
+  font-size: 1em;
+  color: #333;
+}
+
+@media all and (max-width: 660px) {
+  .copyright {
+    margin: 0 0 20px 0;
+    font-size: 0.875em;
+  }
+}
