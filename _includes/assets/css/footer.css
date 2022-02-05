@@ -1,0 +1,29 @@
+.footer-container {
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer-container a {
+  border-bottom: none;
+  line-height: 1em;
+}
+
+.footer-container svg {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+  background: #eee;
+  fill: #666;
+  transition: padding 0.25s linear, fill 0.25s ease;
+}
+
+.footer-container svg:hover {
+  border-bottom: none;
+  transition: padding 0.25s linear, fill 0.25s ease;
+  padding: 0px;
+  fill: #000;
+}
