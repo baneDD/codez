@@ -1,5 +1,5 @@
 function handleClickOutside(e) {
-  if (e.target.id !== 'menu-container') {
+  if (!document.getElementById('menu-container').contains(e.target)) {
     document.getElementById('menu-container').classList = '';
   }
 }
@@ -16,12 +16,12 @@ function handleMenuClick() {
   const menuOpen = container.classList.contains('open');
 
   if (menuOpen) {
+    document.getElementById('menu-container').classList = '';
     document.removeEventListener('mousedown', handleClickOutside);
     document.removeEventListener('keydown', handleEscKey);
-    document.getElementById('menu-container').classList = '';
   } else {
+    container.classList.add('open');
     document.addEventListener('mousedown', handleClickOutside);
     document.addEventListener('keydown', handleEscKey);
-    container.classList.add('open');
   }
 }

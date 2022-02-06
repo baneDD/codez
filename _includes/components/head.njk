@@ -10,9 +10,12 @@
   <meta name="description" content="{{ metaDescription or renderData.metaDescription or metadata.description }}">
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set css %}
-    {% include "assets/css/nav.css" %}
     {% include "assets/css/inline.css" %}
+    {% include "assets/css/nav.css" %}
     {% include "assets/css/footer.css" %}
+    {% if customCSS %}
+      {% include customCSS %}
+    {% endif %}
   {% endset %}
   <style>{{ css | cssmin | safe }}</style>
   {% set js %}

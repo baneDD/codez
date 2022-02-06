@@ -1,6 +1,25 @@
 ---
-layout: layouts/base.njk
 section: home
 ---
 
-{{ layoutContent | safe }}
+<!doctype html>
+<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+
+	{% include "components/head.njk" %}
+
+	<body>
+
+		<header>
+			{% include "components/nav.njk" %}
+		</header>
+
+		<main>
+			<div class="home-container">
+				{{ layoutContent | safe }}
+			</div>
+		</main>
+
+	</body>
+
+</html>
+
