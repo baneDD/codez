@@ -1,0 +1,123 @@
+#menu-container {
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+
+  z-index: 1;
+
+  user-select: none;
+}
+
+#menu-container a {
+  border-bottom: none;
+}
+
+#menu-container span {
+  display: block;
+  position: relative;
+
+  width: 30px;
+  height: 4px;
+  margin-bottom: 5px;
+
+  background: #999;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
+}
+
+/* Phantom span used to define the
+     clickable area for the menu button */
+#menu-container span:nth-of-type(4) {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 30px;
+  height: 22px;
+  opacity: 0;
+}
+
+/* This is the last visible item
+     so we remove the bottom margin */
+#menu-container span:nth-of-type(3) {
+  margin-bottom: 0px;
+}
+
+#menu-container.open span:first-of-type {
+  transform: rotate(45deg) translate(2px, 0.5px);
+}
+
+#menu-container.open span:nth-of-type(2) {
+  transition: width 0.55s;
+  width: 23px;
+  opacity: 0;
+}
+
+#menu-container.open span:nth-of-type(3) {
+  transform: rotate(-45deg) translate(-1px, -2px);
+}
+
+#menu-container.open span:nth-of-type(4) {
+  width: 23px;
+}
+
+#menu-list a {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #999;
+
+  transition: color 0.3s ease;
+}
+
+#menu-list a:hover {
+  color: #333;
+}
+
+ul#menu-list {
+  position: absolute;
+  top: -20px;
+  left: -40px;
+  padding: 40px 40px 18px 40px;
+  padding-top: 50px;
+  background-color: white;
+  opacity: 0.9;
+  border-radius: 10px;
+
+  list-style-type: none;
+
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+}
+
+.open ul#menu-list {
+  transform: none;
+}
+
+#menu-list li {
+  display: block;
+  font-size: 1.5em;
+}
+
+@media all and (max-width: 660px) {
+  #menu-container {
+    top: 20px;
+    left: 20px;
+  }
+
+  .open ul#menu-list {
+    top: -44px;
+    left: -16px;
+    padding: 16px;
+    padding-top: 55px;
+  }
+
+  .open ul#menu-list > li {
+    color: #333;
+  }
+}
